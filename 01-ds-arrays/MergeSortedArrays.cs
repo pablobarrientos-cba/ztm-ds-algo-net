@@ -1,27 +1,27 @@
 ﻿namespace ztm_ds_algo_net._01_ds_arrays
 {
+
+    // Given 2 sorted integer arrays, return a sorted array containing all the items
+    // [1,5,7] / [2,4,9,10] must return [1,2,4,5,7,9,10]
     public partial class Solution
     {
         public static void MergeSortedArrays()
         {
-            Solution.WriteSeparator();
+            Solution.WriteSeparator();           
+            
+            Console.WriteLine("02 - Merging Sorted Arrays [1, 5, 7], [2, 4, 9, 10]");
 
-            Console.WriteLine("Given the following arrays: [] / [1,2,3]");
-            Console.WriteLine("02 - Merging Sorted Arrays When Array 1 is Empty");
-
-            foreach (var item in GetMergedArrays([], [1, 2, 3]))
+            foreach (var item in GetMergedArrays([1, 5, 7], [2, 4, 9, 10]))
                 Console.Write($" {item} ");
 
             Solution.WriteSeparator();
         }
         private static int[] GetMergedArrays(int[] array1, int[] array2)
         {
-            if (array1.Length == 0)
-                return array2;
-            if (array2.Length == 0)
-                return array1;
-
-            return [];
+            var myList = new List<int>(array1);
+            myList.AddRange(array2);
+            myList.Sort();
+            return myList.ToArray();
         } 
     }
 }
