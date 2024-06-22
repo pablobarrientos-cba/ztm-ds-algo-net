@@ -8,4 +8,7 @@ Console.WriteLine($"01 - Reversing string 'Hello World': {Solution.ReverseString
 // Merge Sorted Arrays
 Solution.MergeSortedArrays();
 
+// Reverse each word on a Sentence
+Solution.DoReverseSentence();
+
 Console.ReadLine();
